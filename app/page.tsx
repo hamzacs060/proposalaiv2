@@ -51,7 +51,7 @@ export default function LandingPage() {
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        padding: '16px 48px',
+        padding: '16px 20px',
         background: 'rgba(6,6,15,0.8)',
         backdropFilter: 'blur(20px)',
         borderBottom: '1px solid var(--border)',
@@ -137,7 +137,7 @@ export default function LandingPage() {
           maxWidth: 900, margin: '0 auto 80px', padding: '0 24px',
         }}>
           <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px,1fr))',
             background: 'rgba(255,255,255,0.03)',
             border: '1px solid var(--border)',
             borderRadius: 20, overflow: 'hidden',
@@ -173,7 +173,11 @@ export default function LandingPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: 20
+          }}>
             {STEPS.map((step, i) => (
               <div key={step.num} className="card" style={{ padding: 32, position: 'relative', overflow: 'hidden' }}>
                 <div style={{
@@ -211,7 +215,11 @@ export default function LandingPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: 16
+                }}>
             {FEATURES.map((f, i) => (
               <div key={f.title} className="card" style={{
                 padding: 28, display: 'flex', gap: 18,
