@@ -65,9 +65,9 @@ export default function SettingsPage() {
         the better your proposals will match your voice and experience.
       </p>
 
-      <div className="card" style={{ padding: 32 }}>
+      <div className="card" style={{ padding: 22 }}>
         {/* Name */}
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#a1a1aa', fontWeight: 500 }}>
             Full Name
           </label>
@@ -81,7 +81,12 @@ export default function SettingsPage() {
         </div>
 
         {/* Type + Rate */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
+        <div style={{
+          display:'grid',
+          gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))',
+          gap:16,
+          marginBottom:20
+        }}>
           <div>
             <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#a1a1aa', fontWeight: 500 }}>
               Freelancer Type
@@ -110,7 +115,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Skills */}
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#a1a1aa', fontWeight: 500 }}>
             Your Skills <span style={{ color: '#52525b' }}>(comma-separated)</span>
           </label>
@@ -148,7 +153,11 @@ export default function SettingsPage() {
           className="btn-primary"
           onClick={handleSave}
           disabled={saving}
-          style={{ padding: '12px 28px', fontSize: 15 }}
+          style={{
+          padding:'14px 20px',
+          fontSize:15,
+          width:'100%'
+        }}
         >
           {saving ? 'Saving...' : saved ? '✓ Saved!' : 'Save Profile'}
         </button>
