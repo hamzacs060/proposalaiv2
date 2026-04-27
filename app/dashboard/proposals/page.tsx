@@ -65,7 +65,14 @@ export default function ProposalsPage() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32 }}>
+      <div style={{
+      display:'flex',
+      justifyContent:'space-between',
+      alignItems:'center',
+      flexWrap:'wrap',
+      gap:12,
+    marginBottom:32
+    }}>
         <div>
           <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 4, color: '#f4f4f5' }}>
             My Proposals
@@ -78,7 +85,7 @@ export default function ProposalsPage() {
       </div>
 
       {/* Filter Tabs */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
+      <div style={{ display:'flex',gap:8,overflowX:'auto',paddingBottom:4 }}>
         {STATUS_OPTIONS.map(s => (
           <button
             key={s}
@@ -116,10 +123,10 @@ export default function ProposalsPage() {
 
             return (
               <div key={p.id} style={{
-                padding: '20px 24px',
+                padding: '18px 18px',
                 borderBottom: i < proposals.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
+                <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start',gap:12}}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
                       <span style={{ fontWeight: 600, color: '#f4f4f5' }}>
@@ -152,13 +159,13 @@ export default function ProposalsPage() {
                   </div>
 
                   {(p.status === 'draft' || p.status === 'sent') && (
-                    <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
+                    <div style={{display:'flex',gap:6,flexShrink:0,flexWrap:'wrap'}}>
                       {p.status === 'draft' && (
                         <button
                           onClick={() => updateStatus(p.id, 'sent')}
                           disabled={isMarking}
                           className="btn-secondary"
-                          style={{ fontSize: 12, padding: '6px 10px',
+                          style={{ fontSize: 11, padding: '5px 8px',
                             background: 'rgba(59,130,246,0.1)', color: '#93c5fd',
                             borderColor: 'rgba(59,130,246,0.2)' }}
                         >
