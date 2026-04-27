@@ -136,7 +136,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* MAIN */}
-      <main style={{ marginLeft: 230, flex: 1, padding: '36px 40px', minHeight: '100vh' }}>
+      <main style={{ marginLeft: window.innerWidth < 768 ? 0 : 230,flex:1,padding: window.innerWidth < 768 ? '24px 18px' : '36px 40px', minHeight: '100vh' }}>
         {children}
       </main>
     </div>
