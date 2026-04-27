@@ -25,7 +25,7 @@ function CopyBtn({ text, label = 'Copy' }: { text: string; label?: string }) {
 function Block({ title, children, copyText }: { title: string; children: React.ReactNode; copyText?: string }) {
   return (
     <div className="card" style={{ padding: 28, marginBottom: 16, animation: 'fadeUp 0.4s ease both' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+      <div style={{display:'flex',flexWrap:'wrap',gap:10,justifyContent:'space-between',alignItems:'center',marginBottom:20}}>
         <h3 style={{ fontWeight: 700, fontSize: 15, color: 'var(--text)' }}>{title}</h3>
         {copyText && <CopyBtn text={copyText} />}
       </div>
@@ -85,10 +85,10 @@ export default function NewProposalPage() {
       </div>
 
       {/* INPUT CARD */}
-      <div className="card animate-fade-up-1" style={{ padding: 32, marginBottom: 24 }}>
+      <div className="card animate-fade-up-1" style={{ padding: 22, marginBottom: 24 }}>
         <div style={{ marginBottom: 20 }}>
           <label className="label">Job Post / Description *</label>
-          <textarea className="input" rows={9} value={jobPost}
+          <textarea className="input" rows={7} value={jobPost}
             onChange={e => setJobPost(e.target.value)}
             placeholder="Paste the full job description here. The more detail you give, the better and more specific the proposal will be. Include their requirements, goals, budget hints, timeline..."
             style={{ resize: 'vertical', fontFamily: 'DM Sans, sans-serif', lineHeight: 1.7 }}
@@ -103,7 +103,7 @@ export default function NewProposalPage() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))',gap:16,marginBottom:24}}>
           <div>
             <label className="label">Client Name (optional)</label>
             <input className="input" type="text" value={clientName}
@@ -150,7 +150,7 @@ export default function NewProposalPage() {
           {/* STATUS BAR */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
             <h2 style={{ fontWeight: 800, fontSize: 22 }}>Your Proposal Package</h2>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <div style={{display:'flex',gap:8,alignItems:'center',flexWrap:'wrap'}}>
               {statusMsg && <span style={{ color: '#10b981', fontSize: 14, fontWeight: 600 }}>{statusMsg}</span>}
               <button className="btn-secondary"
                 style={{ fontSize: 12, padding: '7px 12px', background: 'rgba(59,130,246,0.1)', color: '#93c5fd', borderColor: 'rgba(59,130,246,0.2)' }}
@@ -268,7 +268,7 @@ export default function NewProposalPage() {
           <Block title="📋 Scope of Work"
             copyText={`DELIVERABLES:\n${output.scope.deliverables.map(d => `• ${d}`).join('\n')}\n\nTIMELINE: ${output.scope.timeline}\n\nMILESTONES:\n${output.scope.milestones.map(m => `${m.name} (${m.duration}): ${m.deliverable}`).join('\n')}\n\nNOT INCLUDED:\n${output.scope.exclusions.map(e => `• ${e}`).join('\n')}`}>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(260px,1fr))',gap:20,marginBottom:20}}>
               <div>
                 <p style={{ color: 'var(--text3)', fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 12 }}>
                   Deliverables
