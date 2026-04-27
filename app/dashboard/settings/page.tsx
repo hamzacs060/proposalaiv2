@@ -154,8 +154,8 @@ export default function SettingsPage() {
           onClick={handleSave}
           disabled={saving}
           style={{
-          padding:'14px 20px',
-          fontSize:15,
+          padding:'16px 18px',
+          fontSize:16,
           width:'100%'
         }}
         >
