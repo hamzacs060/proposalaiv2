@@ -22,20 +22,20 @@ function StatCard({ label, value, sub, icon, accent }: {
 }) {
   return (
     <div className="card" style={{
-      padding: '24px 28px',
+      padding: '18px 18px',
       background: 'rgba(255,255,255,0.025)',
       position: 'relative', overflow: 'hidden',
     }}>
       <div style={{
         position: 'absolute', top: -20, right: -10,
-        fontSize: 70, opacity: 0.06, userSelect: 'none',
+        fontSize: 50, opacity: 0.06, userSelect: 'none',
       }}>{icon}</div>
       <p style={{ color: 'var(--text3)', fontSize: 12, fontWeight: 600,
         textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>
         {label}
       </p>
       <p style={{
-        fontFamily: 'Syne, sans-serif', fontSize: 34, fontWeight: 800,
+        fontFamily: 'Syne, sans-serif', fontSize: 28, fontWeight: 800,
         color: accent || 'var(--text)', lineHeight: 1,
       }}>
         {value}
@@ -75,20 +75,25 @@ export default function DashboardPage() {
   return (
     <div>
       {/* HEADER */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 36 }}>
+      <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-start',flexWrap:'wrap',gap:12, marginBottom: 36 }}>
         <div>
           <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 6 }}>Dashboard</h1>
           <p style={{ color: 'var(--text2)' }}>Track your proposals and grow your win rate</p>
         </div>
         <Link href="/dashboard/proposals/new" style={{ textDecoration: 'none' }}>
-          <button className="btn-primary" style={{ padding: '11px 20px', display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="btn-primary" style={{ padding: '10px 14px', display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontSize: 16 }}>✦</span> New Proposal
           </button>
         </Link>
       </div>
 
       {/* STATS */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(160px,1fr))',
+        gap: 16,
+        marginBottom: 32
+      }}>
         <StatCard icon="📄" label="Total Proposals" value={String(analytics?.total || 0)} sub="all time" />
         <StatCard icon="🎯" label="Win Rate"        value={`${analytics?.winRate || 0}%`} sub="of sent proposals" accent={winRateColor} />
         <StatCard icon="💰" label="Revenue Won"     value={`$${(analytics?.totalRevenue || 0).toLocaleString()}`} sub="from won proposals" accent="#f59e0b" />
@@ -99,8 +104,11 @@ export default function DashboardPage() {
       <div className="card" style={{ overflow: 'hidden' }}>
         <div style={{
           padding: '20px 28px', borderBottom: '1px solid var(--border)',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        }}>
+          display:'flex',
+          flexDirection:'column',
+          alignItems:'flex-start',
+          gap:8,
+          }}>
           <h2 style={{ fontWeight: 700, fontSize: 17 }}>Recent Proposals</h2>
           <Link href="/dashboard/proposals" style={{ color: 'var(--accent2)', fontSize: 13, textDecoration: 'none', fontWeight: 500 }}>
             View all →
