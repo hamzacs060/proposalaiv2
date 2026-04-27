@@ -18,9 +18,9 @@ function StatCard({ label, value, sub, accent }: {
   label: string; value: string; sub?: string; accent?: boolean
 }) {
   return (
-    <div className="card" style={{ padding: 24 }}>
+    <div className="card" style={{ padding: 18 }}>
       <p style={{ color: '#71717a', fontSize: 13, marginBottom: 8 }}>{label}</p>
-      <p style={{ fontSize: 28, fontWeight: 700, color: accent ? '#a78bfa' : '#f4f4f5' }}>{value}</p>
+      <p style={{ fontSize: 24, fontWeight: 700, color: accent ? 'linear-gradient(135deg,#a78bfa,#f59e0b)' : '#f4f4f5' }}>{value}</p>
       {sub && <p style={{ color: '#52525b', fontSize: 12, marginTop: 4 }}>{sub}</p>}
     </div>
   )
@@ -32,11 +32,11 @@ function BarRow({ label, value, max, color }: {
   const pct = max > 0 ? (value / max) * 100 : 0
   return (
     <div style={{ marginBottom: 14 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 14 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
         <span style={{ color: '#d4d4d8', textTransform: 'capitalize' }}>{label.replace(/_/g, ' ')}</span>
         <span style={{ color: '#a1a1aa' }}>{value}</span>
       </div>
-      <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 6 }}>
+      <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 8 }}>
         <div style={{ background: color, borderRadius: 4, height: 6, width: `${pct}%`, transition: 'width 0.5s' }} />
       </div>
     </div>
@@ -70,7 +70,7 @@ export default function AnalyticsPage() {
       </p>
 
       {/* STATS GRID */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16, marginBottom: 32 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
         <StatCard label="Total Proposals"  value={String(analytics.total)} />
         <StatCard label="Sent"             value={String(analytics.sent)} />
         <StatCard label="Won"              value={String(analytics.won)} />
@@ -81,7 +81,11 @@ export default function AnalyticsPage() {
         <StatCard label="Lost"             value={String(analytics.lost)} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+      <div style={{
+      display:'grid',
+      gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))',
+      gap:16
+      }}>
 
         {/* Loss Reasons */}
         <div className="card" style={{ padding: 24 }}>
