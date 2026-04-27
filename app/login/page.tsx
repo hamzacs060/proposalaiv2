@@ -37,7 +37,7 @@ export default function LoginPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: 18, boxShadow: '0 0 20px rgba(124,58,237,0.5)',
             }}>✦</div>
-            <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 18, color: 'var(--text)' }}>ProposalAI</span>
+            <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: 16, color: 'var(--text)' }}>ProposalAI</span>
           </Link>
           <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 8 }}>Welcome back</h1>
           <p style={{ color: 'var(--text2)', fontSize: 15 }}>Sign in to your account</p>
