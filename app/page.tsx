@@ -56,7 +56,7 @@ export default function LandingPage() {
         backdropFilter: 'blur(20px)',
         borderBottom: '1px solid var(--border)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <div style={{
             width: 32, height: 32, borderRadius: 8,
             background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
@@ -68,12 +68,24 @@ export default function LandingPage() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+        <div style={{
+          display: 'flex',
+          gap: 6,
+          alignItems: 'center',
+          flexWrap: 'wrap'
+          }}>
           <Link href="/login" style={{ textDecoration: 'none' }}>
-            <button className="btn-secondary">Sign in</button>
+            <button
+            className="btn-secondary"
+            style={{ padding:'10px 14px', fontSize:14 }}
+            >
+            Sign in
+          </button>
           </Link>
           <Link href="/signup" style={{ textDecoration: 'none' }}>
-            <button className="btn-primary">Start Free →</button>
+            <button className="btn-primary" style={{ padding:'10px 14px', fontSize:14 }}>
+              Start Free →
+            </button>
           </Link>
         </div>
       </nav>
@@ -275,9 +287,14 @@ export default function LandingPage() {
 
         {/* ── FOOTER ── */}
         <footer style={{
-          borderTop: '1px solid var(--border)',
-          padding: '28px 48px',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        borderTop: '1px solid var(--border)',
+        padding: '28px 24px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 14,
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <div style={{
