@@ -281,7 +281,7 @@ export default function LandingPage() {
             <span style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700, fontSize: 15 }}>ProposalAI</span>
           </div>
           <p style={{ color: 'var(--text3)', fontSize: 13 }}>
-            © 2025 ProposalAI. Built for freelancers.
+            © 2026 ProposalAI. Built for freelancers.
           </p>
         </footer>
       </div>
